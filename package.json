@@ -1,8 +1,14 @@
 {
   "name": "@fastify/redis-session",
-  "version": "0.1",
+  "version": "0.1.0",
   "main": "./index.js",
   "type": "commonjs",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "test": "npm run test:typescript",
+    "lint": "standard",
+    "test:typescript": "tsd ./"
+  },
   "devDependencies": {
     "@fastify/cookie": "^8.3.0",
     "@fastify/pre-commit": "^2.0.2",
@@ -13,12 +19,9 @@
     "tap": "^16.3.4",
     "tsd": "^0.28.0"
   },
-  "precommit": [],
+  "precommit": ["lint", "test"],
   "dependencies": {
     "fastify-plugin": "^4.5.0"
-  },
-  "tsd": {
-    "directory": "test"
   },
   "publishConfig": {
     "access": "public"

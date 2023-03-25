@@ -1,4 +1,5 @@
 {
   "editor.defaultFormatter": "standard.vscode-standard",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "standard.enable": false,
 }
