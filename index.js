@@ -8,8 +8,31 @@ function fastifyRedisSession (fastify, options, next) {
   if (!fastify.hasPlugin('@fastify/redis')) {
     throw new Error('@fastify/redis plugin required')
   }
+  // Proxy Handlers
+  const proxyHandlers = {
+    get (target, param) {
+      return target[param]
+    },
+    set (target, param, value) {
+      const { redis } = fastify
+      const key = `session_${target.session_id}`
+      redis.set(key, JSON.stringify(Object.assign(target, { [param]: value })))
+    }
+  }
+  // Register decorators
+  fastify.decorateRequest('session', null)
   fastify.addHook('onRequest', async (request, reply) => {
-    console.dir(request.cookies)
+    const { redis } = fastify
+    const key = `session_${request.cookies.session}`
+    let session = await redis.get(key)
+    if (!session) {
+      await redis.set(key, JSON.stringify({}))
+      session = {}
+    } else {
+      session = JSON.parse(session)
+    }
+    session.session_id = request.cookies.session
+    request.session = new Proxy(session, proxyHandlers)
   })
   next()
 }

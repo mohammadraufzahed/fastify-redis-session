@@ -14,7 +14,11 @@ fastify.register(require('@fastify/redis'), {
 fastify.register(fastifyRedisSession, {})
 
 fastify.get('/', (req, res) => {
-  return res.send('hi')
+  return res.send(req.session.name)
+})
+fastify.get('/set', (req, res) => {
+  req.session.name = 'Mohammad'
+  return req.send('ok')
 })
 
 fastify.listen({ port: 3000 }, (err, address) => {
