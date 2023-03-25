@@ -385,6 +385,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/cookie@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "@fastify/cookie@npm:8.3.0"
+  dependencies:
+    cookie: "npm:^0.5.0"
+    fastify-plugin: "npm:^4.0.0"
+  checksum: 4cf9531f35f0094dd80c1b1519745534e4da9cb8d070bf62648d1fbcf1db464f7978ce4aee08005d0f97cf13fb17fb97cefed689aa654437592a55573f90c3dc
+  languageName: node
+  linkType: hard
+
 "@fastify/deepmerge@npm:^1.0.0":
   version: 1.3.0
   resolution: "@fastify/deepmerge@npm:1.3.0"
@@ -422,7 +432,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@fastify/redis-session@workspace:."
   dependencies:
+    "@fastify/cookie": "npm:^8.3.0"
     "@fastify/pre-commit": "npm:^2.0.2"
+    "@fastify/redis": "npm:^6.1.0"
     "@types/node": "npm:^18.15.9"
     fastify: "npm:^4.15.0"
     fastify-plugin: "npm:^4.5.0"
@@ -431,6 +443,16 @@ __metadata:
     tsd: "npm:^0.28.0"
   languageName: unknown
   linkType: soft
+
+"@fastify/redis@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@fastify/redis@npm:6.1.0"
+  dependencies:
+    fastify-plugin: "npm:^4.0.0"
+    ioredis: "npm:^5.0.0"
+  checksum: 8c47c9735b4ab9cc1f8f15fe08d778a91634d0ce653ca6fcc721a8e0b8ed1eabd66dab1f1ddea9479205c42c65b2638b8494ef1c6228d7a20ed09fc5cd86b8fa
+  languageName: node
+  linkType: hard
 
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
@@ -461,6 +483,13 @@ __metadata:
   version: 1.2.1
   resolution: "@humanwhocodes/object-schema@npm:1.2.1"
   checksum: c860f96faaaaecd6c5c4ee6912f7c761579031b464c3cf55832e59e18b116968d89b570ef6a9a10b1670a67e7998a530c8c549b4a41b118153340772ad10cea9
+  languageName: node
+  linkType: hard
+
+"@ioredis/commands@npm:^1.1.1":
+  version: 1.2.0
+  resolution: "@ioredis/commands@npm:1.2.0"
+  checksum: fe5f85d310fa707793974a03cd27625c3cca191e3028c0ecd1514bcd511c7ccd854f7d6b2140954bb5ad7611d3d025d53adb97fa2bc43f169636a3df3e929523
   languageName: node
   linkType: hard
 
@@ -1375,6 +1404,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cluster-key-slot@npm:^1.1.0":
+  version: 1.1.2
+  resolution: "cluster-key-slot@npm:1.1.2"
+  checksum: 7a1aa9a711615cc2caae01cc1368a2d244cfe3247bb953f6b31bcb3bf3ed0c42fc13fa3a0c744efea7283b0a55acaab7d7b1f19a1497c51c2412648f23e3eda3
+  languageName: node
+  linkType: hard
+
 "code-excerpt@npm:^3.0.0":
   version: 3.0.0
   resolution: "code-excerpt@npm:3.0.0"
@@ -1485,7 +1521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -1553,6 +1589,13 @@ __metadata:
   version: 1.0.0
   resolution: "delegates@npm:1.0.0"
   checksum: 2ef8c043c6caea7f00f23236e0606b00f10d2b497657d63d230e50efdef307936b070734187b03960b9c4afe64ce9e09a77c01da60e661d42dcefec11ce41c30
+  languageName: node
+  linkType: hard
+
+"denque@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "denque@npm:2.1.0"
+  checksum: 7e1c278144b7c5047ff46783edf7d736193644abbdea1c788e1b686b402b7669fcf417e168c9a9ccd8a346ff0d1e1b15696177e2b231fd1af66ee03c072b4066
   languageName: node
   linkType: hard
 
@@ -2175,7 +2218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-plugin@npm:^4.5.0":
+"fastify-plugin@npm:^4.0.0, fastify-plugin@npm:^4.5.0":
   version: 4.5.0
   resolution: "fastify-plugin@npm:4.5.0"
   checksum: 10ec8805be44faaad5f37be3c68359bef1f7645b8a1e8f996734f38f1918589708576227906ebe17dcc3dda5352f7d89f7b80950ab804fe6a468b8b363f8758f
@@ -2852,6 +2895,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ioredis@npm:^5.0.0":
+  version: 5.3.1
+  resolution: "ioredis@npm:5.3.1"
+  dependencies:
+    "@ioredis/commands": "npm:^1.1.1"
+    cluster-key-slot: "npm:^1.1.0"
+    debug: "npm:^4.3.4"
+    denque: "npm:^2.1.0"
+    lodash.defaults: "npm:^4.2.0"
+    lodash.isarguments: "npm:^3.1.0"
+    redis-errors: "npm:^1.2.0"
+    redis-parser: "npm:^3.0.0"
+    standard-as-callback: "npm:^2.1.0"
+  checksum: 2dffdbbe54dfd95d48f664de88b3975f455615af50c8d2f75ed1e7f0c3f93a008b8dc54bf15fe3f89daa9a610742cabe2940573c9bae9a20529fee93664aaed9
+  languageName: node
+  linkType: hard
+
 "ip@npm:^2.0.0":
   version: 2.0.0
   resolution: "ip@npm:2.0.0"
@@ -3426,10 +3486,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.defaults@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lodash.defaults@npm:4.2.0"
+  checksum: 6ef1b158c3b00b1885abc4dbc4266863dcf4b978a433b7512191243a4ad029d44d9da2ef2c0cc08dc735b6091ff73434023877f8abc39882bd748ab4bda7e692
+  languageName: node
+  linkType: hard
+
 "lodash.flattendeep@npm:^4.4.0":
   version: 4.4.0
   resolution: "lodash.flattendeep@npm:4.4.0"
   checksum: 51b08dd38bf4918f7baa16a3e1dc3032ca336f11b382729ff3372f2721ea614bb408b02331d81aff3ccfa11f4a0876859b30e170ddcb4c1595068c87082baaf7
+  languageName: node
+  linkType: hard
+
+"lodash.isarguments@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "lodash.isarguments@npm:3.1.0"
+  checksum: 2508395914b6bb037d90d2f151bd71b40fe3433956cd04eab9dd1073c62203e816bbfa74d9174002a05decd888db9377aa64637c7513c8e9f218a091301b9111
   languageName: node
   linkType: hard
 
@@ -4492,6 +4566,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redis-errors@npm:^1.0.0, redis-errors@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "redis-errors@npm:1.2.0"
+  checksum: d83eea8875c9fd7e1b0012b694cb13d40acc2bc5a26ecd0cf2e343ddb5e83973781050d65b5f7239fdffac4955f9ec0abd090ce40818c37c409ceb3bc675f7a9
+  languageName: node
+  linkType: hard
+
+"redis-parser@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "redis-parser@npm:3.0.0"
+  dependencies:
+    redis-errors: "npm:^1.0.0"
+  checksum: 02c1783a0cbd37c14127a68c7c4bcd51b784d90fb956cc7399a829f7c6cb7dd62ff2274a23f488acf1c68b61cc662fb2f406ac3946685c78e2023825944ca498
+  languageName: node
+  linkType: hard
+
 "regexp.prototype.flags@npm:^1.4.3":
   version: 1.4.3
   resolution: "regexp.prototype.flags@npm:1.4.3"
@@ -4962,6 +5052,13 @@ __metadata:
   dependencies:
     escape-string-regexp: "npm:^2.0.0"
   checksum: 79e5c96b05bd8b12ab441d95a5c960e819c4783dfdbdef7f663b01fc97a9c51698fd0e8d76d4a91913f33c3fea6e35cf44df1710a6a85d572f20e85fb0846df3
+  languageName: node
+  linkType: hard
+
+"standard-as-callback@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "standard-as-callback@npm:2.1.0"
+  checksum: 9f765f41bc0c6cd4357bc4aae48a190888802f5365667e5664aa8411a4ece1d3d4cce7e76e9e9be3cda3e24d132a2e5ba941c9b92f86349cf60f5a6a68a63794
   languageName: node
   linkType: hard
 
