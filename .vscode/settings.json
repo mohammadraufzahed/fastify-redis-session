@@ -1,0 +1,6 @@
+{
+  "editor.defaultFormatter": "standard.vscode-standard",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
