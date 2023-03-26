@@ -1,6 +1,6 @@
 {
   "name": "@ariodev/fastify-redis-session",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./index.js",
   "type": "commonjs",
   "repository": "https://github.com/mohammadraufzahed/fastify-redis-session",
