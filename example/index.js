@@ -11,7 +11,7 @@ fastify.register(require('@fastify/redis'), {
   url: 'redis://localhost'
 })
 
-fastify.register(fastifyRedisSession, {})
+fastify.register(fastifyRedisSession)
 
 fastify.get('/', (req, res) => {
   return res.send(req.session.name)
