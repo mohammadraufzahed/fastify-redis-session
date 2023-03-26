@@ -15,7 +15,7 @@
     "@fastify/cookie": "^8.3.0",
     "@fastify/pre-commit": "^2.0.2",
     "@fastify/redis": "^6.1.0",
-    "@types/node": "^18.15.9",
+    "@types/node": "^18.15.10",
     "fastify": "^4.15.0",
     "standard": "^17.0.0",
     "tap": "^16.3.4",
