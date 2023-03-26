@@ -11,12 +11,13 @@ function fastifyRedisSession (fastify, options, next) {
   // Proxy Handlers
   const proxyHandlers = {
     get (target, param) {
-      return target[param]
+      return Reflect.get(target, param)
     },
     set (target, param, value) {
       const { redis } = fastify
       const key = `session_${target.session_id}`
       redis.set(key, JSON.stringify(Object.assign(target, { [param]: value })))
+      return Reflect.set(target, param, value)
     }
   }
   // Register decorators

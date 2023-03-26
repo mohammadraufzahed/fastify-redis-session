@@ -5,8 +5,9 @@
   "type": "commonjs",
   "types": "./types/index.d.ts",
   "scripts": {
-    "test": "npm run test:typescript",
     "lint": "standard",
+    "test": "npm run test:typescript; npm run test:unit",
+    "test:unit": "tap test/*.js",
     "test:typescript": "tsd ./"
   },
   "devDependencies": {

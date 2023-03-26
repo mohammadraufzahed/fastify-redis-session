@@ -1,11 +1,11 @@
 const fastify = require('fastify')()
 const fastifyRedisSession = require('../')
 
-fastify.register(require('@fastify/cookie', {
+fastify.register(require('@fastify/cookie'), {
   secret: 'my-secret',
   hook: 'onRequest',
   parseOptions: {}
-}))
+})
 
 fastify.register(require('@fastify/redis'), {
   url: 'redis://localhost'
