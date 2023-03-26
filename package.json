@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "./index.js",
   "type": "commonjs",
+  "repository": "https://github.com/mohammadraufzahed/fastify-redis-session",
   "types": "./types/index.d.ts",
   "scripts": {
     "lint": "standard",
