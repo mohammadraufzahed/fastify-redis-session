@@ -1,4 +1,5 @@
 const fastifyPlugin = require('fastify-plugin')
+const { ulid } = require('ulid')
 
 function fastifyRedisSession (fastify, options, next) {
   // Check the required plugins
@@ -13,10 +14,11 @@ function fastifyRedisSession (fastify, options, next) {
     get (target, param) {
       return Reflect.get(target, param)
     },
-    set (target, param, value) {
+    async set (target, param, value) {
       const { redis } = fastify
       const key = `session_${target.session_id}`
-      redis.set(key, JSON.stringify(Object.assign(target, { [param]: value })))
+      await redis.set(key, JSON.stringify(Object.assign(target, { [param]: value })) // Default maxLife to one day
+      )
       return Reflect.set(target, param, value)
     }
   }
@@ -24,7 +26,12 @@ function fastifyRedisSession (fastify, options, next) {
   fastify.decorateRequest('session', null)
   fastify.addHook('onRequest', async (request, reply) => {
     const { redis } = fastify
-    const key = `session_${request.cookies.session}`
+    let sessionKey = request.cookies.session_redis
+    if (!sessionKey) {
+      sessionKey = ulid()
+      reply.cookie('session_redis', sessionKey)
+    }
+    const key = `session_${sessionKey}`
     let session = await redis.get(key)
     if (!session) {
       await redis.set(key, JSON.stringify({}))
@@ -32,7 +39,7 @@ function fastifyRedisSession (fastify, options, next) {
     } else {
       session = JSON.parse(session)
     }
-    session.session_id = request.cookies.session
+    session.session_id = sessionKey
     request.session = new Proxy(session, proxyHandlers)
   })
   next()
