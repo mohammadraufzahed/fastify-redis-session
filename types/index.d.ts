@@ -12,6 +12,7 @@ declare namespace fastifyRedisSession {
             [key: string]:  any | undefined
         }
     export type RedisSessionPluginOptions = {
+        maxLife?: number;
     }
     export const fastifyRedisSession: FastifyRedisSession;
     export {fastifyRedisSession as default}

@@ -5,6 +5,7 @@ const Fastify = require('fastify')
 const fastifyRedisSession = require('..')
 const fastifyRedis = require('@fastify/redis')
 const fastifyCookie = require('@fastify/cookie')
+const { ulid } = require('ulid')
 
 tap.test('Setting data', async (t) => {
   try {
@@ -33,21 +34,36 @@ tap.test('Setting data', async (t) => {
       req.session.name = 'jhone'
       res.code(200).send('ok')
     })
-    const emptyResponse = await fastify.inject({ method: 'GET', url: '/' })
+    const key = ulid()
+    const emptyResponse = await fastify.inject({
+      method: 'GET',
+      url: '/',
+      cookies: {
+        session_redis: key
+      }
+    })
     t.equal(emptyResponse.statusCode, 200)
     t.same(emptyResponse.json(), {})
     const createResponse = await fastify
       .inject({
         method: 'POST',
-        url: '/data'
+        url: '/data',
+        cookies: {
+          session_redis: key
+        }
       })
       .catch((e) => {
-        console.error(e)
         t.fail()
       })
     t.equal(createResponse.statusCode, 200)
     t.equal(createResponse.body, 'ok')
-    const getResponse = await fastify.inject({ method: 'GET', url: '/data' })
+    const getResponse = await fastify.inject({
+      method: 'GET',
+      url: '/data',
+      cookies: {
+        session_redis: key
+      }
+    })
     t.equal(getResponse.statusCode, 200)
     t.equal(getResponse.body, 'jhone')
   } catch (e) {}

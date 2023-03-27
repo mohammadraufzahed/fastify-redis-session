@@ -1,6 +1,6 @@
 {
   "name": "@ariodev/fastify-redis-session",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./index.js",
   "type": "commonjs",
   "repository": "https://github.com/mohammadraufzahed/fastify-redis-session",
@@ -21,9 +21,13 @@
     "tap": "^16.3.4",
     "tsd": "^0.28.0"
   },
-  "precommit": ["lint", "test"],
+  "precommit": [
+    "lint",
+    "test"
+  ],
   "dependencies": {
-    "fastify-plugin": "^4.5.0"
+    "fastify-plugin": "^4.5.0",
+    "ulid": "^2.3.0"
   },
   "publishConfig": {
     "access": "public"
