@@ -27,7 +27,7 @@ __metadata:
     fastify-plugin: ^4.5.0
     standard: ^17.0.0
     tap: ^16.3.4
-    tsd: ^0.28.0
+    tsd: ^0.28.1
     ulid: ^2.3.0
   languageName: unknown
   linkType: soft
@@ -5443,20 +5443,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsd@npm:^0.28.0":
-  version: 0.28.0
-  resolution: "tsd@npm:0.28.0"
+"tsd@npm:^0.28.1":
+  version: 0.28.1
+  resolution: "tsd@npm:0.28.1"
   dependencies:
-    "@tsd/typescript": "npm:~5.0.2"
-    eslint-formatter-pretty: "npm:^4.1.0"
-    globby: "npm:^11.0.1"
-    jest-diff: "npm:^29.0.3"
-    meow: "npm:^9.0.0"
-    path-exists: "npm:^4.0.0"
-    read-pkg-up: "npm:^7.0.0"
+    "@tsd/typescript": ~5.0.2
+    eslint-formatter-pretty: ^4.1.0
+    globby: ^11.0.1
+    jest-diff: ^29.0.3
+    meow: ^9.0.0
+    path-exists: ^4.0.0
+    read-pkg-up: ^7.0.0
   bin:
     tsd: dist/cli.js
-  checksum: 3e62ec02bd253dce233dd19a6c735d4198199a5f411ddac0dd07d64864478d88b46e769f9ab12a96fdda92df4d2ca95b9895f1de3d4b36c82a5a2ab610f5c6aa
+  checksum: 8/ca0f0d2ba3063a252ac3ecf5799c6dc8c4c35726f0d0683e6577992a9916cfe3e476f9fdbb67bf57ce8e46ef9cd0189bb847d336d1c01679232f1b91828b0fa6
   languageName: node
   linkType: hard
 
