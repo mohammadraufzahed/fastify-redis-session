@@ -24,7 +24,7 @@ __metadata:
     "@fastify/redis": ^6.1.1
     "@types/node": ^20.2.5
     fastify: ^4.15.0
-    fastify-plugin: ^4.5.0
+    fastify-plugin: ^4.5.1
     standard: ^17.1.0
     tap: ^16.3.6
     tsd: ^0.28.1
@@ -2225,10 +2225,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-plugin@npm:^4.0.0, fastify-plugin@npm:^4.5.0":
+"fastify-plugin@npm:^4.0.0":
   version: 4.5.0
   resolution: "fastify-plugin@npm:4.5.0"
   checksum: 10ec8805be44faaad5f37be3c68359bef1f7645b8a1e8f996734f38f1918589708576227906ebe17dcc3dda5352f7d89f7b80950ab804fe6a468b8b363f8758f
+  languageName: node
+  linkType: hard
+
+"fastify-plugin@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "fastify-plugin@npm:4.5.1"
+  checksum: 8/ddd1b2d470c3acd9397c2617b5842dcf71a6f9a32f05d02be1c12e8d37b8fc03af656900cec38e2afef5e9a3dfe5f994317810f4c5e9960b127b1ca179b56f73
   languageName: node
   linkType: hard
 
