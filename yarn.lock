@@ -22,7 +22,7 @@ __metadata:
     "@fastify/cookie": ^8.3.0
     "@fastify/pre-commit": ^2.0.2
     "@fastify/redis": ^6.1.1
-    "@types/node": ^20.2.5
+    "@types/node": ^20.4.5
     fastify: ^4.15.0
     fastify-plugin: ^4.5.0
     standard: ^17.1.0
@@ -698,10 +698,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.2.5":
-  version: 20.2.5
-  resolution: "@types/node@npm:20.2.5"
-  checksum: 8/38ce7c7e9d76880dc632f71d71e0d5914fcda9d5e9a7095d6c339abda55ca4affb0f2a882aeb29398f8e09d2c5151f0b6586c81c8ccdfe529c34b1ea3337425e
+"@types/node@npm:^20.4.5":
+  version: 20.4.5
+  resolution: "@types/node@npm:20.4.5"
+  checksum: 8/36a0304a8dc346a1b2d2edac4c4633eecf70875793d61a5274d0df052d7a7af7a8e34f29884eac4fbd094c4f0201477dcb39c0ecd3307ca141688806538d1138
   languageName: node
   linkType: hard
 
