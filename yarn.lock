@@ -26,7 +26,7 @@ __metadata:
     fastify: ^4.15.0
     fastify-plugin: ^4.5.0
     standard: ^17.1.0
-    tap: ^16.3.6
+    tap: ^16.3.8
     tsd: ^0.28.1
     ulid: ^2.3.0
   languageName: unknown
@@ -5276,9 +5276,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tap@npm:^16.3.6":
-  version: 16.3.6
-  resolution: "tap@npm:16.3.6"
+"tap@npm:^16.3.8":
+  version: 16.3.8
+  resolution: "tap@npm:16.3.8"
   dependencies:
     "@isaacs/import-jsx": ^4.0.1
     "@types/react": ^17.0.52
@@ -5322,7 +5322,7 @@ __metadata:
       optional: true
   bin:
     tap: bin/run.js
-  checksum: 8/0f1ec8fa094fbb9729d085a4ad3995c4853d70a97533524375311961a1fc20b5a09392dbbfd65ba575393ac5a34300a7830fe9333a8aae5060c0624d7b2c4a19
+  checksum: 8/b63e064f1ea20aa4cbe8cd40fbe780def9757b637caaae8ee24d96b184d8627421045dd56168b21715f6ebff77e88db774cda0b80af113ae33432641aefcbb58
   languageName: node
   linkType: hard
 
