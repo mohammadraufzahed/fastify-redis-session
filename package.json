@@ -12,7 +12,7 @@
     "test:typescript": "tsd ./"
   },
   "devDependencies": {
-    "@fastify/cookie": "^8.3.0",
+    "@fastify/cookie": "^9.0.4",
     "@fastify/pre-commit": "^2.0.2",
     "@fastify/redis": "^6.1.1",
     "@types/node": "^20.2.5",
