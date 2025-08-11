@@ -12,21 +12,21 @@
     "test:typescript": "tsd ./"
   },
   "devDependencies": {
-    "@fastify/cookie": "^8.3.0",
+    "@fastify/cookie": "^9.0.4",
     "@fastify/pre-commit": "^2.0.2",
     "@fastify/redis": "^6.1.1",
     "@types/node": "^20.2.5",
     "fastify": "^4.22.2",
     "standard": "^17.1.0",
     "tap": "^16.3.8",
-    "tsd": "^0.28.1"
+    "tsd": "^0.29.0"
   },
   "precommit": [
     "lint",
     "test"
   ],
   "dependencies": {
-    "fastify-plugin": "^4.5.0",
+    "fastify-plugin": "^4.5.1",
     "ulid": "^2.3.0"
   },
   "publishConfig": {
