@@ -17,9 +17,4 @@ jobs:
     with:
       lint: true
       license-check: true
-
-    strategy:
-      fail-fast: true
-      matrix:
-        node-version: [18, 20, 22]
     secrets: inherit
