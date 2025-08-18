@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "fastify-plugin": "^4.5.1",
-    "ulid": "^2.3.0"
+    "ulid": "^3.0.1"
   },
   "publishConfig": {
     "access": "public"
