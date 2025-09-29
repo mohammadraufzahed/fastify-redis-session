@@ -26,7 +26,7 @@
     "test"
   ],
   "dependencies": {
-    "fastify-plugin": "^5.0.1",
+    "fastify-plugin": "^5.1.0",
     "ulid": "^3.0.1"
   },
   "publishConfig": {
