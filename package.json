@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@fastify/cookie": "^11.0.2",
-    "@fastify/pre-commit": "^2.0.2",
+    "@fastify/pre-commit": "^2.2.1",
     "@fastify/redis": "^7.0.2",
     "@types/node": "^24.5.2",
     "fastify": "^4.22.2",
