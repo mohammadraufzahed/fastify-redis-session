@@ -13,7 +13,7 @@ on:
 jobs:
   test:
     name: Test on Node ${{ matrix.node-version }}
-    uses: fastify/workflows/.github/workflows/plugins-ci-redis.yml@v3
+    uses: fastify/workflows/.github/workflows/plugins-ci-redis.yml@v5
     with:
       lint: true
       license-check: true
