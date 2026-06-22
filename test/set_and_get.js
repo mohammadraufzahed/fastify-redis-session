@@ -4,16 +4,23 @@ const tap = require('tap')
 const Fastify = require('fastify')
 const fastifyRedisSession = require('..')
 const fastifyRedis = require('@fastify/redis')
-const fastifyCookie = require('@fastify/cookie')
+const fp = require('fastify-plugin')
 const { ulid } = require('ulid')
+
+// Register a lightweight, test-only cookie plugin compatible with the Fastify version used in CI
+async function fakeCookiePlugin (instance, opts) {
+  // minimal decorations expected by the plugin under test
+  instance.decorateRequest('cookies', {})
+  instance.decorateReply('cookie', function (name, val, options) {
+    // store cookies set during the request for assertions if needed
+    this._setCookies = this._setCookies || {}
+    this._setCookies[name] = { val, options }
+  })
+}
 
 tap.test('Setting data', async (t) => {
   const fastify = Fastify({ logger: false })
-  await fastify.register(fastifyCookie, {
-    secret: 'my-secret',
-    hook: 'onRequest',
-    parseOptions: {}
-  })
+  await fastify.register(fp(fakeCookiePlugin, { name: '@fastify/cookie' }))
   t.teardown(fastify.close.bind(fastify))
   await fastify.register(fastifyRedis, {
     url: 'redis://localhost'

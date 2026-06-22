@@ -12,10 +12,10 @@ declare namespace fastifyRedisSession {
   export type Session = {
     [key: string]: any | undefined
     session_id?: string
-    save?: () => void
-    replace?: (obj: Record<string, any>) => void
-    delete?: (key: string) => void
-    options?: (opts: { maxAge?: number }) => void
+    save: () => void
+    replace: (obj: Record<string, any>) => void
+    delete: (key?: string) => void
+    options: (opts: { maxAge?: number }) => void
     _options?: { maxAge?: number }
   }
 
